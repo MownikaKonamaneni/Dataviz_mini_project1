@@ -1,0 +1,3 @@
+"0","# Load data"
+"0","marathon_data <- read_csv(""D:/Masters/Sem3/Mini Project 1/data/marathon_results_2017.csv"")"
+"0","head(marathon_data)"

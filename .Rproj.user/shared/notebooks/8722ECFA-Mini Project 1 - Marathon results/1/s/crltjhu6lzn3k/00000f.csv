@@ -1,0 +1,10 @@
+"0","# Load data"
+"0","worldcup <- read_csv(""data/WorldCupMatches.csv"")"
+"2","[1mRows: [22m[34m4572[39m [1mColumns: [22m[34m20[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (12): Datetime, Stage, Stadium, City, Home Team Name, Away Team Name, Win conditions, Refer...
+[32mdbl[39m  (8): Year, Home Team Goals, Away Team Goals, Attendance, Half-time Home Goals, Half-time A..."
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

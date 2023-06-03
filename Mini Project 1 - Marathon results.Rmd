@@ -1,0 +1,114 @@
+---
+title: "Mini project 1 - Marathon Results  "
+author: "Mownika Konamaneni - mkonamaneni4501@floridapoly.edu"
+date: "2023-06-02"
+output: html_notebook
+---
+
+
+```{r}
+#Load libraries
+library(tidyverse)
+library(ggplot2)
+
+```
+
+
+
+```{r}
+# Load data
+marathon_data <- read_csv("data/marathon_results_2017.csv")
+marathon_data
+```
+```{r}
+colnames(marathon_data)[4] <- "M_F"
+colnames(marathon_data)[19] <- "Official_Time"
+```
+
+```{r}
+# calculate the count of finishers by age group
+age_group_counts <- marathon_data %>%
+  count(Age)
+age_group_counts
+```
+```{r}
+# Create a bar plot using ggplot
+ggplot(age_group_counts, aes(x = Age, y = n)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(title = "Number of Finishers by Age Group",
+       x = "Age Group",
+       y = "Count") +
+  theme_minimal()
+```
+
+
+```{r}
+
+# Create a histogram to visualize the age distribution of finishers
+ggplot(marathon_data, aes(x = Age)) +
+  geom_histogram(aes(y = ..density..),
+                 binwidth = 2, 
+                 fill = "green", 
+                 color = "black", 
+                 alpha = 0.3) +
+  geom_density(color = "red") +
+  labs(title = "Age Distribution of Finishers",
+       x = "Age",
+       y = "Count") +
+  theme_minimal()
+```
+
+
+```{r}
+# Create a histogram to visualize the age distribution based on gender
+ggplot(marathon_data, aes(x = Age, fill = M_F)) +
+  geom_histogram(aes(y = ..density..), binwidth = 2, position = "identity", alpha = 0.5 ) + 
+  geom_density(alpha = 0.3) +
+  labs(title = "Age Distribution based on Gender",
+       x = "Age",
+       y = "Density") +
+  guides(fill=guide_legend(title="M/F")) +
+  theme_minimal()
+```
+
+
+
+
+```{r}
+gender_group_counts <- marathon_data %>%
+  count(M_F)
+
+#create bar chart
+ggplot(gender_group_counts, aes(x=M_F, y=n, fill=M_F), size = ) +
+  geom_bar(stat="identity", show.legend = FALSE, width = 0.3) +
+  labs(title = "Gender-specific finishers", x = "Gender", y = "Count" ) +
+  theme_minimal()
+
+```
+
+
+
+```{r}
+
+# Group the data by country and calculate the average finishing time for each country
+country_avg_time <- marathon_data %>%
+  group_by(Country) %>%
+  summarise(Avg_Time = mean(Official_Time))
+
+# Sort the countries based on the average finishing time in ascending order
+sorted_countries <- country_avg_time %>%
+  arrange(Avg_Time)
+
+# Select the top 10 countries with the fastest runners
+top_10_countries <- head(sorted_countries, 10)
+
+# Create a bar plot for the top 10 countries with the fastest runners
+ggplot(top_10_countries, aes(x = reorder(Country, Avg_Time) , y = Avg_Time )) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(title = "Top 10 Countries with the Fastest Runners",
+       x = "Country",
+       y = "Average Finishing Time") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  theme_minimal()
+```
+

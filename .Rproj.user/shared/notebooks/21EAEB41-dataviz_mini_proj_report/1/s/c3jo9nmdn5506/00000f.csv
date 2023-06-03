@@ -1,0 +1,4 @@
+"0","# Load data"
+"0","marathon_data <- read_csv(""data/marathon_results_2017.csv"")"
+"2","Error: 'data/marathon_results_2017.csv' does not exist in current working directory ('D:/Masters/Sem3/Mini Project 1/report').
+"

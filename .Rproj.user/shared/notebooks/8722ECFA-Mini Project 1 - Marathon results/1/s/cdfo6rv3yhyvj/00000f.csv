@@ -1,0 +1,4 @@
+"0","# calculate the count of finishers by age group"
+"0","age_group_counts <- marathon_data %>%"
+"0","  count(Age)"
+"0","age_group_counts"

@@ -27,7 +27,7 @@ To run the analysis on your local machine, follow these steps:
 
 1. Clone the repository to your local machine using the following command:
 
-$ git clone https://github.com/MownikaKonamaneni/Dataviz_mini_project1.git
+   $ git clone https://github.com/MownikaKonamaneni/Dataviz_mini_project1.git
 
 
 2. Open the R project file (`Mini Project 1.Rproj`) in RStudio.

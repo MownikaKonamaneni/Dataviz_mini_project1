@@ -45,7 +45,7 @@ The analysis of the marathon data from 2017 yielded the following insights:
 
 - The highest number of finishers fell within the age group of 40-45, followed closely by the age group of 45-50. The number of finishers gradually increased with age until the mid-40s, and then it started gradually decreasing with increasing age.
 ![](https://github.com/MownikaKonamaneni/Dataviz_mini_project1/blob/main/Figures/Number%20of%20finishers%20by%20age%20group.jpg)
-- The age distribution of finishers followed a relatively normal distribution with a peak in the mid-40s. This finding suggests that individuals in their mid-40s participate in marathons more frequently compared to other age groups.
+- The age distribution of finishers followed a relatively normal distribution with a peak in the mid-40s. This finding suggests that we have high number of finishers in mid 40s compared to other age groups.
 ![](https://github.com/MownikaKonamaneni/Dataviz_mini_project1/blob/main/Figures/Age%20distribution%20of%20finishers.jpg)
 - There were differences in the age distribution based on gender. The age distribution of female finishers was on a lower scale compared to male finishers, indicating that, on average, female finishers have a lower age compared to male finishers.
 ![](https://github.com/MownikaKonamaneni/Dataviz_mini_project1/blob/main/Figures/Age%20distribution%20based%20on%20gender.jpg)
